@@ -7,12 +7,13 @@ namespace FileStateMonitor
 {
     internal class Program
     {
-        static int newFilesCount = 0;
+        static ulong newFilesCount = 0;
         static void Main(string[] args)
         {
             string? path = ConfigurationManager.AppSettings["Path"];
 
-            Console.WriteLine("Вас приветствует система мониторинга появления новых файлов в папке и подпапках! ");
+            Console.WriteLine("Вас приветствует система мониторинга появления новых файлов в папке и подпапках! " +
+                "Мониторинг осуществляется после первого включения и до остановки.");
             Console.WriteLine("Путь к целевой папке должен быть указан в файле App.config.");
             Console.WriteLine("Указан путь: " + path ?? "[ПУСТО]");
 
